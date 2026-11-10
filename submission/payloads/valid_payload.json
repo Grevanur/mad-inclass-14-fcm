@@ -1,0 +1,10 @@
+{
+  "notification": {
+    "title": "New promotion",
+    "body": "Switch the screen to the promo asset"
+  },
+  "data": {
+    "asset": "promo",
+    "action": "update_ui"
+  }
+}

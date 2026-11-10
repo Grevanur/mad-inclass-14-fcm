@@ -1,0 +1,10 @@
+{
+  "notification": {
+    "title": "Invalid asset check",
+    "body": "The previous content should be preserved"
+  },
+  "data": {
+    "asset": "unknown",
+    "action": "update_ui"
+  }
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" rx="72" fill="#FFF2D8"/>
+  <circle cx="600" cy="340" r="210" fill="#FFD166"/>
+  <path d="M390 320 L760 220 L760 510 L390 410 Z" fill="#D84A32"/>
+  <rect x="480" y="408" width="92" height="180" rx="24" transform="rotate(-12 480 408)" fill="#9F2D1F"/>
+  <path d="M790 270 L900 210 M810 350 L940 350 M790 430 L900 500" stroke="#D84A32" stroke-width="28" stroke-linecap="round"/>
+  <text x="600" y="700" text-anchor="middle" font-family="Arial, sans-serif" font-size="68" font-weight="700" fill="#5F241B">NEW PROMOTION</text>
+</svg>
