@@ -2,7 +2,7 @@
 
 - Student: Gowtham Revanur
 - Project: Activity 14 — Firebase Cloud Messaging in Flutter
-- Repository: To be added after repository creation
+- Repository: https://github.com/Grevanur/mad-inclass-14-fcm
 - Evidence: `T1_foreground.png`, `T2_notification.png`, and `T4_invalid_payload.png`
 - Reflection: `reflection.md`
 - Test matrix: `test_results.md`
