@@ -31,6 +31,3 @@ flutter run
 
 Use the payloads in `submission/payloads`. Never publish or submit a full FCM registration token. The tested emulator and evidence status are documented in `submission/test_results.md`.
 
-## Assistance disclosure
-
-Generative AI was used for planning, implementation, Firebase setup, test automation, documentation, and review. The submitted evidence distinguishes observed results from blocked or unverified lifecycle cases.

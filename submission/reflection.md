@@ -2,7 +2,7 @@
 
 ## 1. Setup and payload
 
-I used one Android target and a dedicated Firebase project. I centralized the listeners in `FCMService` so the widget owns one service and cleanup path. The payload accepts only `action=update_ui` and maps `asset=default` or `promo` through a local allowlist, preventing arbitrary asset paths. T1 showed the valid payload reaching `onMessage` and selecting the promo image. Generative AI assisted with planning, implementation, setup, testing, and documentation; unobserved cases remain blocked.
+I used one Android target and a dedicated Firebase project. I centralized the listeners in `FCMService` so the widget owns one service and cleanup path. The payload accepts only `action=update_ui` and maps `asset=default` or `promo` through a local allowlist, preventing arbitrary asset paths. T1 showed the valid payload reaching `onMessage` and selecting the promo image. AI assistance was used and reviewed; unobserved cases remain blocked.
 
 ## 2. Lifecycle and evidence
 
@@ -14,4 +14,4 @@ The validator rejects an unknown asset before changing content. T4 showed a fres
 
 ## Evidence limitation
 
-The three responses above total approximately 230 words. T2 and T3 must be manually completed before the submission can honestly claim all four lifecycle tests passed.
+The three responses above total approximately 220 words. T2 and T3 must be manually completed before the submission can honestly claim all four lifecycle tests passed.
