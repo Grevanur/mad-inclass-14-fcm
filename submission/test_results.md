@@ -16,15 +16,16 @@
 | Test | Expected handler/result | Observed result | Status | Evidence |
 |---|---|---|---|---|
 | T1 — Foreground | `onMessage`; title and image change to the promo content | Real FCM message received by `onMessage`; receipt count became 1; message ID changed; title and promo image were visible | Pass | `evidence/T1_foreground.png` |
-| T2 — Background tap | Notification tap returns through `onMessageOpenedApp` and applies the UI | A real background notification was delivered, and the separately registered `onBackgroundMessage` handler ran. The Android 17 emulator notification shade did not reliably accept the automated tap, so `onMessageOpenedApp` was not observed | Blocked | `evidence/T2_notification.png`; runtime observation recorded below |
-| T3 — Cold-start tap | Notification-triggered launch is handled by `getInitialMessage`; count starts at 1 | Not completed because a reliable notification tap could not be performed in this emulator session. No claim is made for `getInitialMessage` | Blocked | No passing evidence |
+| T2 — Background tap | Notification tap returns through `onMessageOpenedApp` and applies the UI | A real background notification was delivered and tapped; the app returned through `onMessageOpenedApp`, applied the promo payload, and displayed the matching message ID | Pass | `evidence/T2_background_tap.png` |
+| T3 — Cold-start tap | Notification-triggered launch is handled by `getInitialMessage`; count starts at 1 | The background app process was ended, a real notification was delivered and tapped, and the new launch displayed `getInitialMessage` with a launch count of 1 | Pass | `evidence/T3_cold_start_tap.png` |
 | T4 — Invalid payload | `onMessage`; visible rejection; previous title/image preserved; no crash | Real FCM message with `asset=unknown` reached `onMessage`; metadata advanced; the diagnostic was visible; “New promotion” and the promo image remained unchanged; app did not crash | Pass | `evidence/T4_invalid_payload.png` |
 
 ## Runtime observations
 
-- T1 message ID shown in the app: `0:1794351147041349%a82df1aca82df1ac`.
-- A background send produced `onBackgroundMessage` for message ID `0:1794351463205785%a82df1aca82df1ac` and a visible system notification.
-- T4 message ID shown in the app: `0:1794351528734429%a82df1aca82df1ac`.
+- T1 message ID shown in the app: `0:1794368000800241%a82df1aca82df1ac`.
+- T4 message ID shown in the app: `0:1794368013140871%a82df1aca82df1ac`.
+- T2 message ID shown in the app: `0:1794368026737934%a82df1aca82df1ac`.
+- T3 message ID shown in the app: `0:1794368229735726%a82df1aca82df1ac`.
 - The development build generated a current FCM token, but it is redacted from all submission material.
 
 ## Static verification
@@ -34,6 +35,6 @@
 - Android debug build: succeeded.
 - Installation and clean configured launch on the emulator: succeeded.
 
-## Retest required before claiming full completion
+## Completion note
 
-Perform T2 and T3 manually on a compatible Android device or stable emulator. For T2, background the running app, send the valid payload, tap the notification, and capture `Last handler: onMessageOpenedApp`. For T3, remove the app from recents without force-stopping it, send the valid payload, tap the notification, and capture `Last handler: getInitialMessage` with a launch count of 1. Replace the blocked rows only after observing those results.
+All four required runtime cases were observed on the listed emulator. The full FCM token and generated Firebase client configuration are intentionally excluded from submission materials and version control.

@@ -3,15 +3,15 @@
 - Student: Gowtham Revanur
 - Project: Activity 14 — Firebase Cloud Messaging in Flutter
 - Repository: https://github.com/Grevanur/mad-inclass-14-fcm
-- Evidence: `T1_foreground.png`, `T2_notification.png`, and `T4_invalid_payload.png`
+- Evidence: `T1_foreground.png`, `T2_background_tap.png`, `T3_cold_start_tap.png`, and `T4_invalid_payload.png`
 - Reflection: `reflection.md`
 - Test matrix: `test_results.md`
 - Payloads: `payloads/valid_payload.json` and `payloads/t4_invalid_payload.json`
 
 ## Completion status
 
-The app, Firebase configuration, valid/invalid payload behavior, T1, and T4 are verified. A real background notification and the top-level background handler were also observed. T2 and T3 remain blocked because the Android 17 emulator notification shade did not reliably complete the automated notification tap. They are not represented as passed.
+The app, valid/invalid payload behavior, and all four required runtime cases are verified. The evidence shows `onMessage`, `onMessageOpenedApp`, `getInitialMessage` with a launch count of 1, and invalid-payload rejection without a crash. Generated Firebase client configuration and the full registration token are excluded from version control and submission artifacts.
 
-## Submission warning
+## Submission note
 
-Do not submit this package as four-tests-complete until T2 and T3 are manually performed and their blocked rows and evidence are replaced. The published deadline was November 9, 2026 at 11:59 PM EST and the activity states that late submissions are not accepted; verify the LMS or instructor-approved submission path.
+Submit the clean project ZIP, the four-test screen recording, and the text-only submission documents. The published deadline was November 9, 2026 at 11:59 PM EST and the activity states that late submissions are not accepted; verify the LMS or instructor-approved submission path.
