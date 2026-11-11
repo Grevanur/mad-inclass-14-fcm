@@ -22,6 +22,15 @@ This Android Flutter app demonstrates Firebase Cloud Messaging receipt and paylo
 
 ## Run and verify
 
+Generate the local Firebase configuration before building:
+
+```text
+flutterfire configure --project=mad-inclass14-gowtham-2026 --platforms=android --android-package-name=edu.gsu.inclass_14
+```
+
+The generated `android/app/google-services.json` and `lib/firebase_options.dart`
+files are intentionally excluded from version control.
+
 ```text
 flutter pub get
 flutter test
